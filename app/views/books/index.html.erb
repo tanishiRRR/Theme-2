@@ -1,23 +1,25 @@
 <h1>Books</h1>
 <div>
-  <% @books.each do |book| %>
   <table>
-    <thed>
+    <thaed>
       <tr>
-        <th>Title</th>
-        <th>Body</th>
+        <th class="table-head-item">Title</th>
+        <th class="table-head-item">Body</th>
         <th></th>
       </tr>
-    </thed>
+    </thaed>
     <tboby>
+      <% @books.each do |book| %>
       <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><span><%= link_to "Show", book_path(book.id) %></span></td>
+        <td class="table-body-item"><%= book.title %></td>
+        <td class="table-body-item"><%= book.body %></td>
+        <td class="table-body-item"><span><%= link_to "Show", book_path(book.id) %></span></td>
+        <td class="table-body-item"><span><%= link_to "Edit", edit_book_path(book.id) %></span></td>
+        <td class="table-body-item"><span><%= link_to "Destroy", destroy_book_path(book.id), method: :delete %></span></td>
       </tr>
+      <% end %>
     </tboby>
   </table>
-  <% end %>
 </div>
 
 <!--formを作成、Bookモデルと連携-->
