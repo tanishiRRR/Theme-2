@@ -1,16 +1,23 @@
 <h1>Books</h1>
 <div>
-  <div>
-    <h4>Title</h4>
-    <h4>Body</h4>
-    <h4></h4>
-  </div>
-  <div>
-    <% @books.each do |book| %>
-      <p><%= book.title %></p>
-      <p><%= book.body %></p>
-    <% end %>
-  </div>
+  <% @books.each do |book| %>
+  <table>
+    <thed>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th></th>
+      </tr>
+    </thed>
+    <tboby>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td></td>
+      </tr>
+    </tboby>
+  </table>
+  <% end %>
 </div>
 
 <!--formを作成、Bookモデルと連携-->

@@ -14,9 +14,13 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  def show
+    @book = List.find(params[:id])
+  end
+
   private
   # ストロングパラメータ
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.permit(:title, :body)
   end
 end
