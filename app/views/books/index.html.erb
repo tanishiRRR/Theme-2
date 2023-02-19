@@ -15,7 +15,7 @@
         <td class="table-body-item"><%= book.body %></td>
         <td class="table-body-item"><span><%= link_to "Show", book_path(book.id) %></span></td>
         <td class="table-body-item"><span><%= link_to "Edit", edit_book_path(book.id) %></span></td>
-        <td class="table-body-item"><span><%= link_to "Destroy", destroy_book_path(book.id), method: :delete, data: {confirm: "Are you sure?"} %></span></td>
+        <td class="table-body-item"><span><%= link_to "Destroy", method: :delete, data: {confirm: "Are you sure?"} %></span></td>
       </tr>
       <% end %>
     </tboby>
