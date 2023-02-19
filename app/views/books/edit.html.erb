@@ -1,4 +1,19 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <h1>Editing Book</h1>
+<!--エラー発生時のコメント-->
+  <% if @book.errors.any? %>
+    <div class="error-box">
+      <h4 class="error-title"><%= @book.errors.count %> errors prohibited this book from being saved:</h4>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div>
   <%= form_with model: @book do |f| %>
     <div class="edit-item">
